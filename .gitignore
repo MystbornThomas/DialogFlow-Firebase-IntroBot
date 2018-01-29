@@ -1,0 +1,4 @@
+.idea/
+Source/.firebaserc
+Source/functions/node_modules/
+Source/firebase-debug.log
