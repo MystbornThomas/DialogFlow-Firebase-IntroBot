@@ -1,0 +1,33 @@
+{
+  "id": "6eef21cb-85c9-45e6-b2a8-7577078caa15",
+  "name": "easteregg.fox_sounds",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "easteregg.fox_sounds",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Ring-ding-ding-ding-dingeringeding!",
+            "Wa-pa-pa-pa-pa-pa-pow!",
+            "Hatee-hatee-hatee-ho!"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1509667080709,
+  "fallbackIntent": false,
+  "events": []
+}

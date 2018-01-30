@@ -1,0 +1,29 @@
+{
+  "id": "7b23246a-9013-4432-949f-719b5d475775",
+  "name": "easteregg.why_chicken_cross_road",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "easteregg.why_chicken_cross_road",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "To complete another level of Angry Birds."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1509667080729,
+  "fallbackIntent": false,
+  "events": []
+}

@@ -1,0 +1,49 @@
+{
+  "id": "9adaaabb-8b0b-408d-9174-0aecfa2a8465",
+  "parentId": "48716819-bef1-41bf-9668-9c0606a29256",
+  "rootParentId": "48716819-bef1-41bf-9668-9c0606a29256",
+  "name": "jokes.feedback.bad",
+  "auto": true,
+  "contexts": [
+    "jokesget-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "jokes.feedback.bad",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "suggestion_chips",
+          "platform": "google",
+          "lang": "en",
+          "suggestions": [
+            {
+              "title": "More Jokes"
+            }
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "The next one will be funnier, I promise. Just ask!",
+            "Yikes, tough crowd. I\u0027ll try another, just say that you are ready.",
+            "Well I thought it was funny. Give me another chance!"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {
+        "google": true
+      },
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508777689079,
+  "fallbackIntent": false,
+  "events": []
+}

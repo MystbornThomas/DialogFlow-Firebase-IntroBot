@@ -1,0 +1,31 @@
+{
+  "id": "baa6e3fc-25ef-479f-a9d3-bfc6c8d9348d",
+  "name": "Default Fallback Intent",
+  "auto": false,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "input.unknown",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Hmm I didn\u0027t understand that, but you could ask me to tell you a joke instead!",
+            "Gosh I wish I was programmed with a response to that, you ask me to send feedback to the developer"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": true,
+  "events": []
+}

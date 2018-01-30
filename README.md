@@ -2,9 +2,10 @@
 Upgraded starting place for firebase fulfillment for dialogflow
 
 ## Instructions
+- First zip up the IntroBot folder under ./DataflowData into IntroBot.zip
 - Goto dialogflow - create your agent
   - Under Agent settings, click Export/Import tab
-  - Restore From Zip & Select the .zip in ./DialogflowData 
+  - Restore From Zip & Select the .zip you created above
   - Copy your project id from Settings->General ie introbot-jf438
   - Open Fulfillment tab
     - Enable Webhook Fulfillment
