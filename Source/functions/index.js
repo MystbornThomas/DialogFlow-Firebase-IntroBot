@@ -1,12 +1,11 @@
 'use strict';
 
-const admin = require('firebase-admin');
 const functions = require('firebase-functions'); // Cloud Functions for Firebase library
 const DialogflowApp = require('actions-on-google').DialogflowApp; // Google Assistant helper library
 
-// Setup DB connection
-admin.initializeApp(functions.config().firebase);
-var db = admin.firestore();
+// Setup custom classes for handling inputs
+const UnhandledAction = require("./Classes/UnhandledAction.js");
+const InputFeedbackStore = require("./Classes/InputFeedbackStore.js");
 
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, response) => {
     console.log('Dialogflow Request headers: ' + JSON.stringify(request.headers));
@@ -20,61 +19,6 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         return response.status(400).end('Invalid Webhook Request (expecting v1 or v2 webhook request)');
     }
 });
-
-/**
- * Class to handle base action functionality
- */
-class UnhandledAction {
-
-    setData(action, parameters, inputContexts, requestSource, userInputString, timestamp){
-        this.action = action;
-        this.parameters = parameters;
-        this.inputContexts = inputContexts;
-        this.requestSource = requestSource;
-        this.userInputString = userInputString;
-        this.timestamp = timestamp;
-    }
-
-    // Implement in child class
-    getGoogleResponse() {
-        return this.getNormalResponse();
-    }
-
-    // Implement in child class
-    getNormalResponse() {
-        return "Not implemented";
-    }
-}
-
-class InputWelcome extends UnhandledAction {
-    getNormalResponse() {
-        return "Woohoo Firebase callback welcome is working!";
-    }
-}
-
-class InputUnknown extends UnhandledAction {
-    getNormalResponse() {
-        return "Woohoo Firebase callback unknown is working!";
-    }
-}
-
-class InputFeedbackStore extends UnhandledAction {
-    getNormalResponse() {
-        let feedbackRef = db.collection('miscData').doc('feedback');
-        console.log("action =>", this.action);
-        console.log("parameters =>", this.parameters);
-        console.log("inputContexts =>", this.inputContexts);
-        console.log("requestSource =>", this.requestSource);
-        console.log("userInputString =>", this.userInputString);
-
-        feedbackRef.set({
-            "feedbackData" : this.userInputString,
-            "timestamp" : this.timestamp
-        });
-
-        return "IntroBot Testfeedback-from deploy! " + this.userInputString + " " + this.timestamp;
-    }
-}
 
 /*
 * Function to handle v1 webhook requests from Dialogflow
@@ -94,10 +38,6 @@ function processV1Request (request, response) {
     const actionHandlers = {
         // Feedback action
         'feedbackintro.feedbackintro-fallback': new InputFeedbackStore(),
-        // The default welcome intent has been matched, welcome the user (https://dialogflow.com/docs/events#default_welcome_intent)
-        'input.welcome': new InputWelcome(),
-        // The default fallback intent has been matched, try to recover (https://dialogflow.com/docs/intents#fallback_intents)
-        'input.unknown': new InputUnknown(),
         // Default handler for unknown or undefined actions
         'default': new UnhandledAction(),
     };
