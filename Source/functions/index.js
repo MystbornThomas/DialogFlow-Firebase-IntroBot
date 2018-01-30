@@ -46,18 +46,6 @@ class UnhandledAction {
     }
 }
 
-class InputWelcome extends UnhandledAction {
-    getNormalResponse() {
-        return "Woohoo Firebase callback welcome is working!";
-    }
-}
-
-class InputUnknown extends UnhandledAction {
-    getNormalResponse() {
-        return "Woohoo Firebase callback unknown is working!";
-    }
-}
-
 class InputFeedbackStore extends UnhandledAction {
     getNormalResponse() {
         let feedbackRef = db.collection('miscData').doc('feedback');
@@ -94,10 +82,6 @@ function processV1Request (request, response) {
     const actionHandlers = {
         // Feedback action
         'feedbackintro.feedbackintro-fallback': new InputFeedbackStore(),
-        // The default welcome intent has been matched, welcome the user (https://dialogflow.com/docs/events#default_welcome_intent)
-        'input.welcome': new InputWelcome(),
-        // The default fallback intent has been matched, try to recover (https://dialogflow.com/docs/intents#fallback_intents)
-        'input.unknown': new InputUnknown(),
         // Default handler for unknown or undefined actions
         'default': new UnhandledAction(),
     };
