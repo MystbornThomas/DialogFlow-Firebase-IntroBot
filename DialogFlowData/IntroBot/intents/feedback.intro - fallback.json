@@ -1,0 +1,36 @@
+{
+  "id": "0f5f9e70-3ed4-431d-97ea-2d7860e63fe6",
+  "parentId": "c6a54926-af32-4303-9aaa-8d943d256e67",
+  "rootParentId": "c6a54926-af32-4303-9aaa-8d943d256e67",
+  "name": "feedback.intro - fallback",
+  "auto": false,
+  "contexts": [
+    "feedbackintro-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": true,
+      "action": "feedbackintro.feedbackintro-fallback",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Ah shoot... that didn\u0027t work for some reason, can you tell me again later?  I wish I could retry on my own, but alas...",
+            "The server I sent that to died, can you tell me again later?  I sure need to work on retrying things myself lol"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508189124811,
+  "fallbackIntent": true,
+  "events": []
+}

@@ -1,0 +1,41 @@
+{
+  "id": "c6a54926-af32-4303-9aaa-8d943d256e67",
+  "name": "feedback.intro",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "feedbackintro-followup",
+          "parameters": {},
+          "lifespan": 2
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Okay I\u0027m all ears...",
+            "Let me have it...",
+            "Give it to me...",
+            "I\u0027m listening... spill the beans...",
+            "Tell me anything, be honest please!",
+            "You won\u0027t hurt my feelings, fire away!"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1515625645,
+  "fallbackIntent": false,
+  "events": []
+}
